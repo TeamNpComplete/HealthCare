@@ -90,20 +90,20 @@ $('#login-btn').on('click', (event) => {
         $('#login-form').submit();
     } else {
         if(!username){
-            ('#login-username').parent().css('border-bottom', '2px solid red');
+            $('#login-username').parent().css('border-bottom', '2px solid red');
         }
         if(!password){
-            ('#line').css('border-bottom', '3px solid red');
+            $('#line').css('border-bottom', '3px solid red');
         }
     }
 });
 
-('#login-username').keyup(() => {
-    ('#login-username').parent().css('border-bottom', '');
+$('#login-username').keyup(() => {
+    $('#login-username').parent().css('border-bottom', '');
 });
 
-('#login-password').keyup(() => {
-    ('#line').css('border-bottom', '');
+$('#login-password').keyup(() => {
+    $('#line').css('border-bottom', '');
 });
 
 $('#username').keyup(() => {
