@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    animation: fadeInEffect 1s;;
+}
+
+@keyframes fadeInEffect{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

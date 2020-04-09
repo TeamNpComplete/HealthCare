@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    background: white;
+}
+
+.navigation{
+    width: 20%;
+    min-height: 100vh;
+    background: #007a99;
+}
+
+.content-holder{
+    width: 100%;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+}
+
+.tab-links{
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    background: #eee;
+    color: #003d4d;
+    border: none;
+    font-size: 14px;
+}
+
+.active-tab {
+    border-bottom: 2px solid #007a99;
+    font-weight: bold;
+}
+
+.tab-links:hover {
+    border-bottom: 2px solid #007a99;
+}
+
+.ps-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ps-profile-image {
+    width: 30%;
+    height: 30vh;
+    margin-top: 10px;
+}
+
+.ps-profile-image img{
+    width: 90%;
+    height: 30vh;
+    object-fit: scale-down;
+}
+
+.ps-info {
+    width: 100%;
+}
+
+.ps-info-block {
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.ps-info-block .ps-label {
+    display: inline-block;
+    width: 15%;
+    font-weight: bold;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 10px 10px;
+    width: 100%;
+    font-weight: bold;
+    background:  #003d4d;
+    color: #eee;
+}
+
+header > button{
+    border: none;
+    background-color: #eee;
+    width: 100px;
+    padding: 10px 10px;
+    font-weight: bold;
+    color: #3d3d3d;
+}
+
+iframe{
+    border: none;
+    width: 100%;
+    padding: 0px 10px;
+    min-height: 50vh;
+}
+
+footer{
+    margin-top: 10px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: #003d4d;
+    color: white;
+}
+
+footer p{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding: 0 0%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #003d4d;
+}
+  
+li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+li a:hover:not(.active) {
+    background-color: #111;
+}
+  
+.active {
+    background-color: #007a99;
+}
