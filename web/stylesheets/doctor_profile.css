@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    animation: fadeInEffect 1s;
+}
+
+@keyframes fadeInEffect{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+
+.ps-profile-image img{
+    width: 100%;
+    height: 50vh;
+    object-fit: scale-down;
+}
+
+.ps-info {
+    width: 50%;
+}
+
+.ps-info-block {
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.ps-info-block .ps-label {
+    display: inline-block;
+    width: 30%;
+    font-weight: bold;
+}
+
+.appointment-btn {
+    padding: 10px;
+    color: white;
+    background: #003d4d;
+    width: 50%;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.form-popup {
+    height: 50%;
+    width: 30%;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+.form-container {
+    padding: 10px;
+    background-color: white;
+}
+
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .btn {
+    background-color: #003d4d;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+.form-container .cancel {
+    background-color: red;
+}
+
+.form-container .btn:hover {
+    opacity: 1;
+}
+
+.alert {
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+}
+
+.success {
+    color: green;
+}   
+
+.failure {
+    color: red;
+}
+
+.close-btn {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+.success-btn {
+    background: green;
+}
+
+.failure-btn {
+    background: red;
+}

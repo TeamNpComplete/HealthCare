@@ -1,5 +1,7 @@
 <?php 
+    session_start();
     require_once('conf.php');
+
     $registered = 0;
     if(isset($_POST['username']) && isset($_POST['password'])){
         $username = $_POST['username'];
@@ -9,19 +11,29 @@
         $stmt = $conn->prepare($sql);
         $stmt->execute([$username]);
         $result = $stmt->fetch();
-        
+
         if($result){
             $registered = 2;
         } else {
-            $sql = "INSERT INTO Users(username, hash) VALUES(?, ?)";
+            $id = sprintf("%06d", mt_rand(1, 999999));
+            
+            if($_POST['role'] == 'doctor'){
+                $id = "D".$id;
+            } else {
+                $id = "P".$id;
+            }
+
+            $sql = "INSERT INTO Users(user_id, username, hash, role) VALUES(?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
             
             $hashed_pass = hash("sha512", $password);
 
-            $result = $stmt->execute([$username, $hashed_pass]);
+            $result = $stmt->execute([$id, $username, $hashed_pass, $_POST['role']]);
             
             if($result){
                 $registered = 1;
+                $_SESSION['user_id'] = $id;
+                header("Location : ");
             } else {
                 $registered = 2;
             }
@@ -172,6 +184,10 @@
                     <i class="fa fa-lock" aria-hidden="true"></i>
                     <input type="password" id="confirm-passwd" placeholder="Confirm Password">
                     <hr>
+                </section>
+                <section class="input" style="display:inline-block;">
+                    <input type="radio" name="role" value="patient" checked="true"> Patient
+                    <input type="radio" name="role" style="margin-left: 100px;" value="doctor"> Doctor
                 </section>
                 <button class="signup-btn" type="button" style="margin-bottom: 20px;">SIGN UP</button>
             </form>

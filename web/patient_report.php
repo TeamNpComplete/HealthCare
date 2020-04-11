@@ -1,3 +1,31 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['user_id'])){
+        header('Location:/login.php');
+    }
+
+    require_once('conf.php');
+
+    $patient_id = $_GET['patient_id'];
+    $general_info;
+
+    if($patient_id) {
+        $sql = "SELECT * FROM PatientsProfile WHERE user_id=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$patient_id]);
+        $general_info = $stmt->fetch();
+
+        if($general_info){
+
+        } else {
+            die("Invalid ID");
+        }
+    } else {
+        die("ID is required !");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,25 +36,7 @@
     <link rel="stylesheet" href="/stylesheets/patient_report.css">
 </head>
 <body>
-    <header>
-        <ul>
-            <li>
-                <a href="home.html" class="active">Home</a>
-            </li>
-            <li>
-                <a href="login.php">Login</a>
-            </li>
-            <li>
-                <a href="faq.xml">FAQ's</a>
-            </li>
-            <li>
-                <a href="about.html">About</a>
-            </li>
-        </ul>
-        <button onclick="document.location.href='logout.jsp'">Logout</button>
-    </header>
     <section class="container">
-        <section class="navigation" style="display: none;"></section>
         <section class="content-holder">
             <section class="ps-card">
                 <figure class="ps-profile-image">
@@ -38,11 +48,19 @@
                 <section class="ps-info">
                     <section class="ps-info-block">
                         <section class="ps-label">Name</section>
-                        <section class="ps-name">Chinmay Joshi</section>
+                        <section class="ps-name">
+                            <?php 
+                                echo $general_info['firstname']." ".$general_info['lastname'];
+                            ?>
+                        </section>
                     </section>
                     <section class="ps-info-block">
                         <section class="ps-label">Gender</section>
-                        <section class="ps-name">Male</section>
+                        <section class="ps-name">
+                            <?php 
+                                echo $general_info['gender'];
+                            ?>
+                        </section>
                     </section>
                     <section class="ps-info-block">
                         <section class="ps-label">Age</section>
@@ -50,7 +68,11 @@
                     </section>
                     <section class="ps-info-block">
                         <section class="ps-label">Contact</section>
-                        <section class="ps-name">8938479379</section>
+                        <section class="ps-name">
+                            <?php 
+                                echo $general_info['ph_no'];
+                            ?>
+                        </section>
                     </section>
                 </section>
             </section>
@@ -69,10 +91,6 @@
             </section>
         </section>
     </section>
-    <footer>
-        <br/>
-        <p>Copyright ©2020 Healthcare portal. All right reserved.</p>
-    </footer>
     <script src="/scripts/patient_report.js"></script>
 </body>
 </html>

@@ -177,6 +177,8 @@ hr{
     width: 100%;
     justify-content: space-around;
     height: 60px;
+    color: white;
+    background: #003d4d;
 }
 
 .login-tab{
@@ -190,8 +192,8 @@ hr{
 }
 
 .active-tab{
-    color: white;
-    background: #003d4d;
+    color: #003d4d;
+    background: #f3f7f7;
 }
 
 ul {
