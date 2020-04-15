@@ -102,7 +102,7 @@ while($row =  $stmt->fetch()) {
                     <span style="font-size: medium; margin-right: -5px; "><?php echo $name?></span>
                     <label for="profile2"><i class="fas fa-bars" style="scale: 0.7;"></i></i></label>
                     <ul>
-                        <li><a href="doctor_profile.php?doctor_id=<?php echo $doctor_id?>" target="myFrame"><i class="far fa-user-circle"></i></i>Profile</a></li>
+                        <li><a href="doctor_registration.php" target="myFrame"><i class="far fa-user-circle"></i></i>Profile</a></li>
                         <li><a><i class="fas fa-cog"></i></i>Settings</a></li>
                         <li><a href="authenticate.php?logout=true"><i class="fas fa-sign-out-alt"></i></i>Logout</a></li>
                     </ul>
