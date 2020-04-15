@@ -17,10 +17,10 @@
                             <a href="login.php">Login</a>
                         </li>
                         <li>
-                            <a class="active" href="#contact">FAQ's</a>
+                            <a class="active">FAQ's</a>
                         </li>
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="about_us.xml">About</a>
                         </li>
                     </ul>
                 </header>

@@ -109,6 +109,10 @@ body{
 }
 
 .alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     font-size: small;
     font-weight: bold;
     text-align: center;

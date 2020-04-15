@@ -19,15 +19,17 @@
                 header('Location: /patient_dashboard.php');
             else
                 header('Location: /doctor_dashboard.php');
-            die();
+            exit();
         }
     }
 
     session_unset();
     session_destroy();
 
-    if(isset($_POST['logout']))
+    if(isset($_GET['logout'])){
         header('Location: /login.php');
+        exit();
+    }
 
     header('Location: /login.php?error=invalid_login');
 

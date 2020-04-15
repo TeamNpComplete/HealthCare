@@ -83,16 +83,16 @@
     <header>
         <ul>
             <li>
-                <a href="home.html">Home</a>
+                <a href="index.php">Home</a>
             </li>
             <li>
-                <a href="login.html" class="active">Login</a>
+                <a class="active">Login</a>
             </li>
             <li>
                 <a href="faq.xml">FAQ's</a>
             </li>
             <li>
-                <a href="about.html">About</a>
+                <a href="about_us.xml">About</a>
             </li>
             <li>
             	<a style="font-size: 20px; margin-left: 350px;">HealthCare</a>

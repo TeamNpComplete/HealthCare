@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="about_us.xsl"?>
+<About>
+    <content>
+        The physicians would be able to view information on improving health care, managing healthcare information, reducing medical errors through a vast availability of information needed by the provider or assistance, strengthening the relationship between the physician and hospital making it more efficient to interface and make work more simplified, enhancing an effective relationship between the patients, distributing data through a secure mode and obliging to HIPAA.
+    </content>
+
+    <mission>
+        With the race in development of technology, the patient or the consumer would prefer to have a direct contact with their provider for many reasons for which these patient portals holds well. The patient portal allows access to the patient's provider through secure messaging, and the facility to view the clinical data and access the relevant data in accordance to health information and instructions provided to carry out as daily activities.
+            The patient portal allows the patient to book online appointments, viewing the availability of the provider and the convenience of the patient, which makes appointment scheduling simpler, and alerting the physician on the same. Patients would be able to renew or request for pharmacy refills, which would be authorized by the provider, which allows the patient to have this procedure done at their convenience rather than visiting the clinic for the same. Billing information or payment option is also accessible by the patient tracing the history of payments and its payable amount via the patient portal.
+    </mission>
+
+    <team> 
+        <thumbnail>A </thumbnail>
+        <name> Aditya </name>
+        <work> Web Developer </work>
+        <info> Info</info>
+    </team>
+
+    
+    <team> 
+    <thumbnail>C </thumbnail>
+        <name> Chinmay </name>
+        <work> BackEnd Development </work>
+        <info> Info</info>
+    </team>
+
+    
+    <team> 
+    <thumbnail>A </thumbnail>
+        <name> Atharva </name>
+        <work> DBMS Development </work>
+        <info> Info</info>
+    </team>
+</About>

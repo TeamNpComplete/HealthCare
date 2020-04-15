@@ -12,7 +12,7 @@
     $general_info;
 
     if($doctor_id) {
-        $sql = "SELECT * FROM DoctorsProfile WHERE user_id=?";
+        $sql = "SELECT * FROM DoctorsProfile WHERE doctor_id=?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$doctor_id]);
         $general_info = $stmt->fetch();
@@ -41,6 +41,9 @@
             margin: 0px !important;
         }
     </style>
+    <script>
+        var doctor_id = '<?php echo $doctor_id ?>';
+    </script>
 </head>
 <body>
     
@@ -158,9 +161,7 @@
         </form>
     </div>
     <div class="form-popup alert" id="form-status" style="height:18%; background:white; padding:20px;">
-        <p id="alert-text" style="color:inherit;"></p>
-        </br>
-        <button class="close-btn" onclick="closeAlert()"><b>CANCEL</b></button>
+        
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -169,9 +170,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
     <script src="/scripts/doctor_profile.js"></script>
     <script>
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        tomorrow.setHours(0,0,0,0);
+
         $(function () {
-            $('#datetimepicker1').datetimepicker();
-         });
+            $('#datetimepicker1').datetimepicker({
+                minDate: tomorrow,
+                format:'DD/MM/YYYY hh:mm A'
+            }).on('changeDate', () => {
+                $('#datepicker').datetimepicker('hide');
+            });
+        });
+        
+        $('#input-date').keydown(function (event) {
+            event.preventDefault();
+        });
     </script>
 </body>
 </html>

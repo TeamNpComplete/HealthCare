@@ -1,3 +1,7 @@
+<?php
+    header('Location:login.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +17,7 @@
         <div class="nav">
             <ul>
                 <li>
-                    <a href="#home" class="active">Home</a>
+                    <a class="active">Home</a>
                 </li>
                 <li>
                     <a href="login.php">Login</a>
@@ -22,7 +26,7 @@
                     <a href="faq.xml">FAQ's</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="about_us.xml">About</a>
                 </li>
             </ul>
         </div>
