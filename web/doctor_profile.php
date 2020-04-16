@@ -58,9 +58,8 @@
             <section class="ps-info-block">
                 <section class="ps-label">Name</section>
                 <section class="ps-name">
-                    Chinmay Vijay Joshi
                     <?php 
-                        //echo $general_info['firstname']." ".$general_info['lastname'];
+                        echo $general_info['firstname']." ".$general_info['lastname'];
                     ?>
                 </section>
             </section>
@@ -69,20 +68,20 @@
                 <section class="ps-name">
                     Male
                     <?php 
-                        //echo $general_info['gender'];
+                        echo $general_info['gender'];
                     ?>
                 </section>
             </section>
             <section class="ps-info-block">
-                <section class="ps-label">Age</section>
-                <section class="ps-name">18 Years 3 Months</section>
+                <section class="ps-label">Date of Birth</section>
+                <section class="ps-name"><?php echo $general_info['dob']; ?></section>
             </section>
             <section class="ps-info-block">
                 <section class="ps-label">Contact</section>
                 <section class="ps-name">
                     9874888751
                     <?php 
-                        //echo $general_info['ph_no'];
+                        echo $general_info['ph_no'];
                     ?>
                 </section>
             </section>
@@ -91,7 +90,7 @@
                 <section class="ps-name">
                     M.B.B.S
                     <?php 
-                        //echo $general_info['ph_no'];
+                        echo $general_info['primaryDegree'];
                     ?>
                 </section>
             </section>
@@ -100,7 +99,7 @@
                 <section class="ps-name">
                     M.S.
                     <?php 
-                        //echo $general_info['ph_no'];
+                        echo $general_info['secondaryDegree'];
                     ?>
                 </section>
             </section>
@@ -108,25 +107,23 @@
                 <section class="ps-label">Speciality</section>
                 <section class="ps-name">
                     <?php 
-                        //echo $general_info['ph_no'];
+                        echo $general_info['speciality'];
                     ?>
                 </section>
             </section>
             <section class="ps-info-block">
                 <section class="ps-label">Experience</section>
                 <section class="ps-name">
-                    Cardiology
                     <?php 
-                        //echo $general_info['ph_no'];
+                        echo $general_info['experience'];
                     ?>
                 </section>
             </section>
             <section class="ps-info-block">
                 <section class="ps-label">Address</section>
                 <section class="ps-name">
-                    Flying Bird School, Trimurti Chauk, Dhankawadi
                     <?php 
-                        //echo $general_info['ph_no'];
+                        echo $general_info['addressl1']." ".$general_info['addressl2'];
                     ?>
                 </section>
             </section>
@@ -135,7 +132,7 @@
                 <section class="ps-name">
                     Pune
                     <?php 
-                        //echo $general_info['ph_no'];
+                        echo $general_info['city'];
                     ?>
                 </section>
             </section>

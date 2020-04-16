@@ -72,9 +72,7 @@
            
             
             <a href="home.php" id='dashboard_tab' onclick="changeTab('dashboard')" target="myFrame"><i class="fas fa-home"></i>Dashboard</a>
-            <a href="development.html"  id='appointments_tab' onclick="changeTab('appointments')" target="myFrame"><i class="fas fa-notes-medical"></i>Forms</a>
-            <a href="development.html" id='history_tab' onclick="changeTab('history')" target="myFrame"><i class="fas fa-history"></i>History</a>
-            <a href="development.html" id='prescriptions_tab' onclick="changeTab('prescriptions')" target="myFrame"><i class="fas fa-file-prescription"></i>Prescriptions</a>
+            <a href="medical_history.php?scroll=true" id='history_tab' onclick="changeTab('history')" target="myFrame"><i class="fas fa-history"></i>History</a>
             <a href="about_us.xml" ><i class="fas fa-info-circle"></i></i>About Us</a>
 
         </nav>
@@ -83,16 +81,12 @@
 
     <header>
         <div class="top-bar">
-            <form class="search-container" autocomplete="off">
+            <form class="search-container" autocomplete="off" action="" method="get">
                 <div class="autocomplete" id="search_doctors">
-                <input type="text" id="myInput" placeholder="Search">
-                <div style="margin-left: -100px; " class="select_box"><select id="filter" name="filter" class="minimal">
-                    <option>Name</option>
-                    <option>Speciality</option>
-                    
-                </select></div> 
+                <input type="text" id="myInput" name="search_val" placeholder="Search">
+                <div style="margin-left: -100px; " class="select_box"> </div> 
             </div>
-           
+        
 <a href="#"><img class="search-icon"
                         src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
                         
@@ -113,7 +107,7 @@
                     <ul>
                       
                       <li><a href="patient_profile.php" target="myFrame"><i class="far fa-user-circle"></i></i>Profile</a></li>
-                      <li><a><i class="fas fa-cog"></i></i>Settings</a></li>
+                      
                       <li><a href="authenticate.php?logout=true"><i class="fas fa-sign-out-alt"></i></i>Logout</a></li>
                     </ul>
                   </label>
@@ -122,6 +116,11 @@
               
            
         </div>
+        
+        <!-- <?php
+            $search_val = $_GET['filter'];  
+            
+           ?> -->
         <script type="text/javascript" src="scripts/search.js"></script>
       
     </header>

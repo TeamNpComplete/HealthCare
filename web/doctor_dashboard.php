@@ -34,7 +34,7 @@ while($row =  $stmt->fetch()) {
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-        <script src="jquery.js"></script>
+        <script src="scripts/jquery.js"></script>
         <script type="text/javascript" src="scripts/dashboard.js"></script>
       
        
@@ -70,10 +70,9 @@ while($row =  $stmt->fetch()) {
 
            
             
-            <a href="doctor_home.php"  id="dashboard_tab" target="myFrame"><i class="fas fa-home"></i>Dashboard</a>
-            <a href="development.html"  id="appointments_tab" target="myFrame"><i class="fas fa-notes-medical"></i>Forms</a>
-            <a href="development.html" target="myFrame"><i class="fas fa-history"></i>History</a>
-            <a href="development.html" target="myFrame"><i class="fas fa-file-prescription"></i>Prescriptions</a>
+            <a href="doctor_home.php"  id="dashboard_tab" onclick="changeTab('dashboard')" target="myFrame"><i class="fas fa-home"></i>Dashboard</a>
+            <a href="appointment_requests.php"  id="appointments_tab" onclick="changeTab('appointments')" target="myFrame"><i class="fas fa-calendar-plus"></i>Appointments </a>
+            <a href="patients_list.php" id="patientlist_tab" onclick="changeTab('patientlist')" target="myFrame"><i class="fas fa-hospital-user"></i>Patients</a>
             <a href="about_us.xml" ><i class="fas fa-info-circle"></i></i>About Us</a>
 
         </nav>
@@ -103,7 +102,7 @@ while($row =  $stmt->fetch()) {
                     <label for="profile2"><i class="fas fa-bars" style="scale: 0.7;"></i></i></label>
                     <ul>
                         <li><a href="doctor_registration.php" target="myFrame"><i class="far fa-user-circle"></i></i>Profile</a></li>
-                        <li><a><i class="fas fa-cog"></i></i>Settings</a></li>
+                        
                         <li><a href="authenticate.php?logout=true"><i class="fas fa-sign-out-alt"></i></i>Logout</a></li>
                     </ul>
                   </label>

@@ -48,7 +48,7 @@ else{
 
 $sql = "INSERT INTO PatientsProfile VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-// $result = $stmt->execute([$user_id, $firstname, $middlename, $lastname, $dob, $email, $occupation, $gender, $addr1, $addr2, $city, $state, $country, $zip, $ph_no, $home_no, $work_no]);
+$result = $stmt->execute([$user_id, $firstname, $middlename, $lastname, $dob, $email, $occupation, $gender, $addr1, $addr2, $city, $state, $country, $zip, $ph_no, $home_no, $work_no]);
 
 // if($result){
 //     echo 'Inserted';
@@ -56,7 +56,7 @@ $stmt = $conn->prepare($sql);
 //     echo 'Not Inserted';
 // }
 
-header("Location: Useless/patient_dashboard.html");
+header("Location: patient_dashboard.php");
 exit();
 ?>
 

@@ -55,10 +55,10 @@ $stmt = $conn->prepare($sql);
 $result = $stmt->execute([$user_id, $firstname, $middlename, $lastname, $dob, $gender, $email, $primary_degree, $secondary_degree, $speciality, $experience, $addr1, $addr2, $city, $state, $country, $zip, $cl_no, $home_no]);
 
 if($result){
-	header("Location: Useless/patient_dashboard.html");
+	header("Location:doctor_dashboard.php");
 	exit();
 } else {
-	header("Location: doctor_profile.php");
+	header("Location:doctor_profile.php");
 	exit();
 }
 

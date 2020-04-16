@@ -11,7 +11,7 @@
     $general_info;
 
     if($patient_id) {
-        $sql = "SELECT * FROM PatientsProfile WHERE user_id=?";
+        $sql = "SELECT * FROM PatientsProfile WHERE patient_id=?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$patient_id]);
         $general_info = $stmt->fetch();
@@ -33,9 +33,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Report</title>
-    <link rel="stylesheet" href="/stylesheets/patient_report.css">
+    <link rel="stylesheet" href="stylesheets/patient_report.css">
 </head>
 <body>
+    <input type="hidden" id="patient-id" value="<?php echo $patient_id;?>">
     <section class="container">
         <section class="content-holder">
             <section class="ps-card">
@@ -82,15 +83,13 @@
                 <button class="tab-links active-tab" id="general" onclick="onTabChange('general')">General</button>
                 <button class="tab-links" id="medications" onclick="onTabChange('medications')">Medications</button>
                 <button class="tab-links" id="appointments" onclick="onTabChange('appointments')">Appointments</button>
-                <button class="tab-links" id="visits" onclick="onTabChange('visits')">Visits</button>
             </nav>
 
             <section class="tab-content history">
-                <iframe id="content-frame"
-                    onload="iframeLoaded()"></iframe>
+                <iframe id="content-frame"></iframe>
             </section>
         </section>
     </section>
-    <script src="/scripts/patient_report.js"></script>
+    <script src="scripts/patient_report.js"></script>
 </body>
 </html>

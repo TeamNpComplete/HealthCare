@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,500,700');
  @import "reset";
+
+html {
+  scroll-behavior: smooth;
+}
+
  body {
-	 font-family: 'Roboto', sans-serif;
+   font-family: 'Roboto', sans-serif;
    background: #f4f6f9;
    
 }
@@ -11,23 +16,23 @@
   position: relative;
 }
  .sideMenu {
-	 background: #302d43;
-        width: 20%;
-     position: absolute;
-     top: 0;
-     bottom: 0;
+  background: #302d43;
+  width: 20%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
  .sideMenu > nav {
-	 padding-top: 20px;
+   padding-top: 20px;
 }
  .sideMenu > nav > a {
-	 display: block;
-	 color: white;
-	 text-decoration: none;
-	 padding: 15px 30px;
-	 font-weight: 300;
-	 transition: all 0.3s ease-in-out;
-	 padding: 15px 30px;
+   display: block;
+   color: white;
+   text-decoration: none;
+   padding: 15px 30px;
+   font-weight: 300;
+   transition: all 0.3s ease-in-out;
+   padding: 15px 30px;
 }
  .sideMenu > nav > a:hover {
      background: #282639;
@@ -38,13 +43,13 @@
     color: #92cf48;
 }
  .sideMenu > nav > a .fa-home {
-	 color: #EAEDF3;
-	 font-size: 1.4rem  ;
-	 margin-right: 0.8rem;
-	 display: inline-block;
-	 width: 30px;
-	 position: relative;
-	 top: 2px;
+   color: #EAEDF3;
+   font-size: 1.4rem  ;
+   margin-right: 0.8rem;
+   display: inline-block;
+   width: 30px;
+   position: relative;
+   top: 2px;
 }
 
 
@@ -70,7 +75,7 @@
 }
 
 
-.sideMenu > nav > a .fa-history {
+.sideMenu > nav > a .fa-calendar-plus {
   color: #EAEDF3;
   font-size: 1.4rem  ;
   margin-right: 0.8rem;
@@ -80,8 +85,19 @@
   top: 2px;
 }
 
-.sideMenu > nav > a .fa-notes-medical {
-    color: #EAEDF3;
+.sideMenu > nav > a .fa-hospital-user {
+  color: #EAEDF3;
+  font-size: 1.4rem  ;
+  margin-right: 0.8rem;
+  display: inline-block;
+  width: 30px;
+  position: relative;
+  top: 2px;
+}
+
+.sideMenu > nav > a .fa-info-circle
+{
+  color: #EAEDF3;
     font-size: 1.4rem  ;
     margin-right: 0.8rem;
     display: inline-block;
@@ -90,7 +106,7 @@
     top: 2px;
 }
  .sideMenu > nav > .active {
-	 background: #282693;
+   background: #282693;
      padding: 15px 30px 15px 25px;
      border-left: 5px solid #92CF48
 }
@@ -99,15 +115,15 @@
     color: #92cf48;
 }
 
-.sideMenu > nav > .active .fa-notes-medical {
+.sideMenu > nav > .active .fa-hospital-user {
     color: #92cf48;
 }
 
-.sideMenu > nav > .active .fa-history {
+.sideMenu > nav > .active .fa-calendar-plus {
     color: #92cf48;
 }
 
-.sideMenu > nav > .active .fa-file-prescription {
+.sideMenu > nav > .active .fa-info-circle {
   color: #92cf48;
 }
 
@@ -252,15 +268,6 @@ header .user-field a.notification .circle {
     color: white;
 }
 
-.card {
-    background: #fff;
-    border-radius: 2px;
-    display: inline-block;
-    height: 20%;
-    position: relative;
-    width: 100%;
-  }
-
   .doctor-info {
     width: 100%;
     display: flex;
@@ -342,9 +349,8 @@ header .user-field a.notification .circle {
 
 .current-info .appointments .upcoming-appointments
 {
-  font-size: 20px;
+  font-size: 22px;
   padding-left: 30px;
-  
 }
 
 .fa-calendar-check
@@ -410,7 +416,6 @@ header .user-field a.notification .circle {
     background: rgb(248,248,248);
     border-radius: 5px;
     width: 500px;
-    height: 100%;
   
     font-weight: 600;
     text-align: left;
@@ -429,11 +434,25 @@ header .user-field a.notification .circle {
     padding: 3px 7px 7px 7px;
   }
 
+  .flag .column1
+  {
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+    margin-top: 18px;
+  }
+
   .flag h4{
     color: #302d43;
     margin-left: 5px;
     margin-top: 3.5px;
     margin-left: 3.5px;
+  }
+
+  .flag .desc
+  {
+    display: flex;
+    flex-direction: vertical;
   }
 
   .flag .column .date label

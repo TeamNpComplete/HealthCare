@@ -463,6 +463,15 @@ header .user-field a.notification .circle {
     padding: 3px 7px 7px 7px;
   }
 
+  .flag .column1
+  {
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+    margin-top: 18px;
+  }
+
+
   .flag h4{
     color: #302d43;
     margin-left: 5px;

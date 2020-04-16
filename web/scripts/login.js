@@ -126,8 +126,8 @@ $('#username').keyup(() => {
             	error = null;
             }
 		};
-		request.open("GET", "user_check.php?q=" + text, true);
-		request.send();
+        request.open("GET", "user_check.php?q=" + text, true);
+        request.send();
 	}
 	
 });

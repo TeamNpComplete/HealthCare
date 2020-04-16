@@ -31,9 +31,13 @@
             $result = $stmt->execute([$id, $username, $hashed_pass, $_POST['role']]);
             
             if($result){
+                echo "Registered";
                 $registered = 1;
                 $_SESSION['user_id'] = $id;
-                header("Location : ");
+                if($id[0] == 'D')
+                    header("Location:/doctor_registration.php");
+                else 
+                    header("Location:/patient_profile.php");
             } else {
                 $registered = 2;
             }

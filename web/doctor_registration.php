@@ -72,11 +72,11 @@
 						<fieldset>
 							<legend>Gender</legend>
 							<div style="float: left;">
-								<input type="radio" name="gender" value="male" <?php echo ($row)?($row['gender']=='male')?checked:'' :'' ?>>
+								<input type="radio" name="gender" value="male" <?php echo ($row)?($row['gender']=='male')?'checked':'' :'' ?>>
 								<label>Male</label>
 							</div>
 							<div style="float: right;">
-								<input type="radio" name="gender" value="female" <?php echo ($row)?($row['gender']=='female')?checked:'' :'' ?>>
+								<input type="radio" name="gender" value="female" <?php echo ($row)?($row['gender']=='female')?'checked':'' :'' ?>>
 								<label>Female</label>
 							</div>
 						</fieldset>

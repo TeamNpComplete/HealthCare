@@ -27,25 +27,25 @@
 
             <div class="card card-1">
                 <div class="user-img"></div>
-                <span class="name">Dr. Chinmay Joshi</span>
+                <span class="name">Dr. Sanjay Rajkuntwar</span>
                 <span class="position">Family Doctor</span>
-                <span class="workplace">Joshi Clinic</span>
+                <span class="workplace">Raj Clinic</span>
 
             </div>
 
 
             <div class="card card-1">
                 <div class="user-img"></div>
-                <span class="name">Dr. Chinmay Joshi</span>
-                <span class="position">Family Doctor</span>
-                <span class="workplace">Joshi Clinic</span>
+                <span class="name">Dr. Sneha Walimbe</span>
+                <span class="position">Opthamologist</span>
+                <span class="workplace">Walimbe Clinic</span>
             </div>
 
             <div class="card card-1">
                 <div class="user-img"></div>
-                <span class="name">Dr. Chinmay Joshi</span>
-                <span class="position">Family Doctor</span>
-                <span class="workplace">Joshi Clinic</span>
+                <span class="name">Dr. Aditya Modak  </span>
+                <span class="position">Orthopedic</span>
+                <span class="workplace"> Modak Clinic</span>
             </div>
         </div>
         <div class="current-info">
@@ -62,6 +62,7 @@
                         class Appointment {
                             
                             public $date;
+                            public $mon;
                             public $time;
                             public $description;
                           
@@ -71,6 +72,13 @@
                             }
                             function get_date() {
                               return $this->date;
+                            }
+
+                            function set_mon($mon) {
+                              $this->mon = $mon;
+                            }
+                            function get_mon() {
+                              return $this->mon;
                             }
 
                             function set_time($time) {
@@ -93,19 +101,42 @@
                           $stmt->execute([$patient_id]);
                           //$result = $stmt->fetch();
                           $a=array();
-    
+                          $months = array("01" => 'JAN', "02" => 'FEB', "03" => 'MAR', "04" => 'APR', "05" => 'MAY', "06" => 'JUN', "07" => 'JUL', "08" => 'AUG', "09" => 'SEP', "10" => 'OCT', "11" => 'NOV', "12" => 'DEC');
                           // Notice: Undefined index: date in /opt/lampp/htdocs/home.php on line 99
                             while($row = $stmt->fetch()) {
                                 $app = new Appointment();
                                 $date_time_str = $row["date_of_appointment"];
-
+                                $d1 = explode (" ", $date_time_str);
+                                $date2 = explode("-",$d1[0]);
+                                $month =  $months[$date2[1]];
+                                $time2 = substr($d1[1],0,5);
+                                $app->set_time($time2);
+                                $app->set_mon($month);
+                                $app->set_date($date2[2]);
                                 $app->set_description($row["description"]);
                                 array_push($a,$app);
                                 }   
 
                             foreach ($a as $value) {
                                 $date1 = $value->get_date();
-                                echo '<li> <div class="direction-r"><div class="flag-wrapper"> <div class="flag"><div class="column"> <div class="date"> <label class="day">'.$value->get_description().'</label> <label class="month">MAR</label></div></div><h4>'.$value->get_description().'</h4><br><h2>'.$value->get_time().'</h2></h4></div></div></div></li>';
+                                echo '<li> 
+                                <div class="direction-r">
+                                  <div class="flag-wrapper"> 
+                                    <div class="flag">
+                                      <div class="column"> 
+                                        <div class="date"> 
+                                          <label class="day">'.$value->get_date().'</label> 
+                                          <label class="month">'.$value->get_mon().'</label>
+                                        </div>
+                                      </div>
+                                      <div class="column1">
+                                        <a href="#scroll" style="color: #000;  ">'.$value->get_description().'</a>
+                                        <div style="margin-right: 10px">'.$value->get_time().'</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </li>';
                         //        echo '<li>';
                         // echo '<div class="direction-r">';
                         // echo '<div class="flag-wrapper">';
@@ -179,11 +210,11 @@
     
                             while($row = $stmt->fetch()) {
                                 $med = new Medications();
-                                $app->set_medicine($row["medicine"]);
-                                $app->set_dosage($row["dosage"]);
-                                $app->set_days($row["days_no"]);
-                                $app->set_time1($row["time_no"]);
-                                array_push($m,$app);
+                               $med->set_medicine($row["medicine"]);
+                                $med->set_dosage($row["dosage"]);
+                                $med->set_days($row["days_no"]);
+                                $med->set_time1($row["time_no"]);
+                                array_push($m,$med);
                                 }   
             
             ?>
@@ -195,11 +226,20 @@
                 </div>
                 <table class="rwd-table">
                     <?php
+                       echo '<th>'.'Medicine'.'</th>';
+                       echo '<th>'.'Dosage'.'</th>';
+                       echo '<th>'.'Days'.'</th>';
+                       echo '<th>'.'Time'.'</th>';
                         foreach ($m as $mvalue) {
-                            echo '<th>'. $mvalue->get_medicine(). '</th>';
-                            echo '<th>'.$mvalue->get_dosage().'</th>';
-                            echo '<th>'.$mvalue->get_days().'</th>';
-                            echo '<th>'.$mvalue->get_time1().'</th>';
+                            
+
+                       
+                        echo '<tr>';
+                        echo '<td data-th="Medicine">'. $mvalue->get_medicine(). '</td>';
+                            echo '<td data-th="Dosage">'.$mvalue->get_dosage().'</td>';
+                            echo '<td data-th="Days">'.$mvalue->get_days().'</td>';
+                            echo '<td data-th="Time">'.$mvalue->get_time1().'</td>';
+                            echo '</tr>';
                         }
                     ?>
                     <!-- <tr>

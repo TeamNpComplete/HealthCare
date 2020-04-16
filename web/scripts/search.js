@@ -1,13 +1,11 @@
 
 
 $(document).ready(function () {
-  $('#search_doctors').click(function () {
-    var value = $('#filter').val();
-    console.log("JavaScript" + value);
 
-    $.post("doctor_search.php", { value: value }, function (data) {
-      console.log("In function" + value);
-    });
+    // var value = $('#filter').val();
+    // console.log("JavaScript" + value);
+    // createCookie("search_param", value, "1");
+  
 
     var res;
     var arr = new Array();
@@ -29,9 +27,24 @@ $(document).ready(function () {
     xhttp.open("GET", "doctor_search.php", true);
     xhttp.send();
 
-  });
+ 
 });
 
+// function createCookie(name, value, days) { 
+//   var expires; 
+    
+//   if (days) { 
+//       var date = new Date(); 
+//       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); 
+//       expires = "; expires=" + date.toGMTString(); 
+//   } 
+//   else { 
+//       expires = ""; 
+//   } 
+    
+//   document.cookie = escape(name) + "=" +  
+//       escape(value) + expires + "; path=/"; 
+// } 
 
 
 function autocomplete(inp, arr) {
