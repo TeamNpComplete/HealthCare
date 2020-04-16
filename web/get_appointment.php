@@ -35,7 +35,6 @@
             if($result) {
                 echo json_decode($request_payload);
             } else {
-                var_dump(http_response_code([503]));
                 exit();
             }
         }

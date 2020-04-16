@@ -97,7 +97,7 @@
                               }
                           }
 
-                          $sql = "SELECT * FROM Appointments WHERE patient_id=?";
+                          $sql = "SELECT * FROM Appointments WHERE patient_id=? AND status='scheduled'";
                           $stmt = $conn->prepare($sql);
                           $stmt->execute([$patient_id]);
                           //$result = $stmt->fetch();
