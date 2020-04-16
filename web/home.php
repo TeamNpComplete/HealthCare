@@ -28,7 +28,7 @@
             <div class="card card-1">
                 <div class="user-img"></div>
                 <span class="name">Dr. Sanjay Rajkuntwar</span>
-                <span class="position">Family Doctor</span>
+                <span class="position">ENT Specialist</span>
                 <span class="workplace">Raj Clinic</span>
 
             </div>
