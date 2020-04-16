@@ -79,7 +79,7 @@
                               }
                           }
 
-                          $sql = "SELECT * FROM Appointments WHERE doctor_id=? AND status='scheduled'";
+                          $sql = "SELECT * FROM Appointments WHERE doctor_id=? AND status='scheduled' ORDER BY date_of_appointment";
                           $stmt = $conn->prepare($sql);
                           $stmt->execute([$doctor_id]);
                           //$result = $stmt->fetch();
