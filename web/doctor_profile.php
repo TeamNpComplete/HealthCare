@@ -66,7 +66,6 @@
             <section class="ps-info-block">
                 <section class="ps-label">Gender</section>
                 <section class="ps-name">
-                    Male
                     <?php 
                         echo $general_info['gender'];
                     ?>
@@ -79,7 +78,6 @@
             <section class="ps-info-block">
                 <section class="ps-label">Contact</section>
                 <section class="ps-name">
-                    9874888751
                     <?php 
                         echo $general_info['ph_no'];
                     ?>
@@ -88,7 +86,6 @@
             <section class="ps-info-block">
                 <section class="ps-label">Primary Degree</section>
                 <section class="ps-name">
-                    M.B.B.S
                     <?php 
                         echo $general_info['primaryDegree'];
                     ?>
@@ -97,7 +94,6 @@
             <section class="ps-info-block">
                 <section class="ps-label">Secondary Degree</section>
                 <section class="ps-name">
-                    M.S.
                     <?php 
                         echo $general_info['secondaryDegree'];
                     ?>
@@ -130,7 +126,6 @@
             <section class="ps-info-block">
                 <section class="ps-label">City</section>
                 <section class="ps-name">
-                    Pune
                     <?php 
                         echo $general_info['city'];
                     ?>

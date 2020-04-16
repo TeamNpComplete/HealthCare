@@ -24,7 +24,7 @@ function getAppointment(){
 
         request.onreadystatechange = () => {
 
-            if(request.readyState == 4  && request.status == 200){
+            if(request.readyState == 4){
                 console.log(request.responseText);
                 $('#form-status').html(`Appointment Request set successfully !
                     </br><button class="close-btn" onclick="closeAlert()"><b>CANCEL</b></button>`);
@@ -32,15 +32,16 @@ function getAppointment(){
                 $('#form-status').removeClass('failure');
                 $('.close-btn').addClass('success-btn');
                 $('.close-btn').removeClass('failure-btn');
-            } else if(request.readyState == 4 && request.status != 200) {
-                console.log(request.response);
-                $('#form-status').html(`Internal Server error !
-                    </br><button class="close-btn" onclick="closeAlert()"><b>CANCEL</b></button>`);
-                $('#form-status').addClass('failure');
-                $('#form-status').removeClass('success');
-                $('.close-btn').addClass('failure-btn');
-                $('.close-btn').removeClass('success-btn');
             }
+            // else if(request.readyState == 4 && request.status != 200) {
+            //     console.log(request.response);
+            //     $('#form-status').html(`Internal Server error !
+            //         </br><button class="close-btn" onclick="closeAlert()"><b>CANCEL</b></button>`);
+            //     $('#form-status').addClass('failure');
+            //     $('#form-status').removeClass('success');
+            //     $('.close-btn').addClass('failure-btn');
+            //     $('.close-btn').removeClass('success-btn');
+            // }
         }
         $('#form-status').html(`<div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span></div>`);
