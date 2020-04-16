@@ -22,8 +22,8 @@
 </head>
 <body>
     <section class="content-area">
+      <?php if($patient_id == "P723565") {?>
         <div class="doctor-info">
-
 
             <div class="card card-1">
                 <div class="user-img"></div>
@@ -48,6 +48,7 @@
                 <span class="workplace"> Modak Clinic</span>
             </div>
         </div>
+      <?php } ?>
         <div class="current-info">
             <div class="appointments">
                 <div class="upcoming-appointments">
