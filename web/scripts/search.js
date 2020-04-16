@@ -75,6 +75,7 @@ function autocomplete(inp, arr) {
 
         b.addEventListener("click", function (e) {
           inp.value = this.getElementsByTagName("input")[0].value;
+          iFrameID.setAttribute('src', 'get_doctor.php?search_val=' + inp.value);
           closeAllLists();
         });
 

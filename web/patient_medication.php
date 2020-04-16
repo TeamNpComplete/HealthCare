@@ -11,6 +11,7 @@ require_once('conf.php');
 $user_id = $_SESSION['user_id'];
 $patient_id = $_GET['patient_id'];
 $general_info;
+$flag = 0;
 
 if($patient_id) {
     $sql = "SELECT * FROM Medications WHERE patient_id=?";
@@ -27,9 +28,9 @@ if($patient_id) {
         $result = $stmt->fetch();
 
     if($result){
-        
+        $flag = 1;
     } else {
-        die("Invalid ID");
+        $flag = 0;
     }
 } else {
     die("ID is required !");
@@ -70,7 +71,7 @@ if($patient_id) {
     </style>
 </head>
 <body>
-    <div class="container" style="margin-top: 100px;">
+    <div class="container" style="margin-top: 100px;<?php if($flag == 0) echo 'display:none';?>">
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -100,6 +101,12 @@ if($patient_id) {
             ?>
             </tbody>
         </table>
+    </div>
+    <div class="container" id="empty-msg-box" style="margin-top: 60px; <?php if($flag == 1) echo 'display:none';?>">
+        <div class="jumbotron">
+            <h1>No Medication</h1>
+            <p>There are currently no medications given.</p>
+        </div>
     </div>
 </body>
 </html>

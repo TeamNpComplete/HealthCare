@@ -11,6 +11,7 @@ require_once('conf.php');
 $user_id = $_SESSION['user_id'];
 $patient_id = $_GET['patient_id'];
 $general_info;
+$flag = 0;
 
 if($patient_id) {
     $sql = "SELECT firstname, lastname, description, date_of_appointment, ph_no FROM Appointments NATURAL JOIN DoctorsProfile WHERE patient_id=?";
@@ -27,9 +28,9 @@ if($patient_id) {
         $result = $stmt->fetch();
 
     if($result){
-        
+        $flag = 1;
     } else {
-        die("Invalid ID");
+        $flag = 0;
     }
 } else {
     die("ID is required !");
@@ -102,6 +103,12 @@ if($patient_id) {
                 $result = $stmt->fetch();
             }
         ?>
+    </div>
+    <div class="container" id="empty-msg-box" style="margin-top: 60px; <?php if($flag == 1) echo 'display:none';?>">
+        <div class="jumbotron">
+            <h1>No Appointments</h1>
+            <p>There are currently no Appointments taken by patient.</p>
+        </div>
     </div>
 </body>
 </html>

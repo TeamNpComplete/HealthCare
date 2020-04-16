@@ -81,7 +81,7 @@
 
     <header>
         <div class="top-bar">
-            <form class="search-container" autocomplete="off" action="" method="get">
+            <form class="search-container" id="search-frm" autocomplete="off" action="get_doctor.php" method="get">
                 <div class="autocomplete" id="search_doctors">
                 <input type="text" id="myInput" name="search_val" placeholder="Search">
                 <div style="margin-left: -100px; " class="select_box"> </div> 
@@ -121,13 +121,10 @@
             $search_val = $_GET['filter'];  
             
            ?> -->
-        <script type="text/javascript" src="scripts/search.js"></script>
       
     </header>
 
     <iframe name="myFrame" src="home.php" id="frm" onload="iframeLoaded();"></iframe>
-    
-   
 </div>
 
         <script>
@@ -154,7 +151,7 @@
 
             iframeLoaded();
         </script>
-
+        <script type="text/javascript" src="scripts/search.js"></script>
 </body>
 
 </html>

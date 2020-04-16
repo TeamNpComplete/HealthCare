@@ -105,9 +105,11 @@ $stmt = $conn->prepare($sql);
 $result = $stmt->execute([$user_id, $bld_grp, $allergies, $heart, $heart_rhyt, $heart_valve, $circ, $lungs, $sleep_apnea, $kidney, $liver_pancreas, $gi, $diabetes, $neurological, $cancer, $bones, $infections]);
 
 if($result){
-    echo 'Inserted';
+	header("Location: medical_history.php");
+	exit();
 } else {
-    echo 'Not Inserted';
+	header("Location: medical_history.php");
+	exit();
 }
 
 // header("Location: Useless/patient_dashboard.html");
