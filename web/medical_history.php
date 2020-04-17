@@ -8,20 +8,23 @@
 
     require_once('conf.php');
     $user_id = $_SESSION['user_id'];
+    $patient_id;
 
-    if(strchr($user_id, "P")){
-        // user is a patient
-        $user = 0;
-    }
-    else{
-        // user is a doctor
-        $user = 1;
+    $sql = "SELECT * FROM PatientsMedProfile WHERE patient_id=?";
+    if($user_id[0] == 'D'){
+        if(isset($_GET['patient_id'])){
+            $patient_id = $_GET['patient_id'];
+        } else {
+            echo "Invalid ID !";
+            exit();
+        }
+    } else {
+        $patient_id = $user_id;
     }
 
-    $sql = "SELECT * FROM PatientsMedProfile WHERE patient_id='".$user_id."'";
-    $result = $conn->query($sql);
-    $result->setFetchMode(PDO::FETCH_ASSOC);
-    $row = $result->fetch();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$patient_id]);
+    $row = $stmt->fetch();
     
 ?>
 <!DOCTYPE html>
