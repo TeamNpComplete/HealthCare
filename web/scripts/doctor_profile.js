@@ -19,7 +19,7 @@ function getAppointment(){
     $('#myForm').fadeOut();
     var pattern = /^([1-9]|([012][0-9])|(3[01]))\/([0]{0,1}[1-9]|1[012])\/\d\d\d\d (20|21|22|23|[0-1]?\d):[0-5]?\d AM|PM$/;
 
-    if(pattern.test($('#input-date').val())){
+    if(pattern.test($('#input-date').val()) && $('#input-description').val().length > 0){
         var request = new XMLHttpRequest();
 
         request.onreadystatechange = () => {
@@ -49,7 +49,8 @@ function getAppointment(){
         request.setRequestHeader('content-type', 'application/json');
         request.send(JSON.stringify({
             doctor_id:doctor_id,
-            date: $('#input-date').val()
+            date: $('#input-date').val(),
+            description: $('#input-description').val()
         }));
 
     } else {

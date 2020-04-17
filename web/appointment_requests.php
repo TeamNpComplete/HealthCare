@@ -10,7 +10,7 @@
 
     $doctor_id = $_SESSION['user_id'];
 
-    $sql = "SELECT appointment_id, patient_id, firstname, middlename, lastname, ph_no, date_of_appointment
+    $sql = "SELECT appointment_id, patient_id, firstname, middlename, lastname, ph_no, date_of_appointment, description
             FROM Appointments NATURAL JOIN PatientsProfile WHERE doctor_id=? AND status='unscheduled' ORDER BY
             date_of_appointment";
 
@@ -95,9 +95,10 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4"><div class="info-title">Discription</div></div>
+                                <div class="col-md-4"><div class="info-title">Description</div></div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" id="appointment-discription-<?php echo $result['appointment_id'];?>" placeholder="Enter small description ...">
+                                    <input type="text" class="form-control" id="appointment-discription-<?php echo $result['appointment_id'];?>" placeholder="Enter small description ..."
+                                    value="<?php echo $result['description'];?>">
                                 </div>
                             </div>
                             </br>
@@ -116,7 +117,7 @@
         }
      ?>
     </div>
-    <div class="container" id="empty-msg-box" style="margin-top: auto; margin-bottom:auto; <?php if($count > 0) echo 'display:none';?>">
+    <div class="container" id="empty-msg-box" style="margin-top: 100px; margin-bottom:auto; <?php if($count > 0) echo 'display:none';?>">
         <div class="jumbotron">
             <h1>No Pending Appointment Requests</h1>
             <p>There are currently no pending appointment requests.</p>

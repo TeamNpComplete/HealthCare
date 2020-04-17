@@ -28,12 +28,6 @@
 		<script src="scripts/patient_profile.js"></script>
 	</head>
 	<body>
-	
-		<header>
-			<div class="head">
-				<a href="" style="color: white">Profile</a>
-			</div>
-		</header>
 
 		<div class="wrapper">
 			<form name="parent_form" action="doctor_prof_data.php" method="post" onsubmit="return validateFields()">
@@ -247,13 +241,6 @@
 				<br>
 			</form>
 		</div>
-
-		<footer>
-			<div class="footer_">
-				<p style="margin: auto;">Copyright &copy; 2019-2020 healthplus.com, All rights reserved.</p>
-				<p style="margin: auto;">Privacy Policy  |  Terms of Use  |  Legal  |  Site Map</p>
-			</div>
-		</footer>
 
 	</body>
 </html>

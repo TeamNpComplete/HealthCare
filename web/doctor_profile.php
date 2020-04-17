@@ -87,7 +87,7 @@
                 <section class="ps-label">Primary Degree</section>
                 <section class="ps-name">
                     <?php 
-                        echo $general_info['primaryDegree'];
+                        echo substr($general_info['primaryDegree'], 0, -1);
                     ?>
                 </section>
             </section>
@@ -95,7 +95,7 @@
                 <section class="ps-label">Secondary Degree</section>
                 <section class="ps-name">
                     <?php 
-                        echo $general_info['secondaryDegree'];
+                        echo substr($general_info['secondaryDegree'], 0, -1);
                     ?>
                 </section>
             </section>
@@ -146,8 +146,10 @@
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
+                </br>   
+                <input type="text" class="form-control" id="input-description" placeholder=" Enter reason for Appointment ...">
             </div>
-            </br></br>
+            </br>
             <button type="button" class="btn" onclick="getAppointment()"><b>SUBMIT</b></button>
             <button type="button" class="btn cancel" onclick="closeForm()"><b>CLOSE</b></button>
         </form>

@@ -27,11 +27,11 @@
             exit();
         }
         
-        if(isset($array_payload['doctor_id']) && isset($array_payload['date'])){
+        if(isset($array_payload['doctor_id']) && isset($array_payload['date']) && isset($array_payload['description'])){
             $appointment_id = sprintf("%010d", mt_rand(1, 9999999999));
-            $sql = "INSERT INTO Appointments VALUES(?, ?, ?, STR_TO_DATE(?, '%d/%m/%Y %h:%i %p'), NULL, 'unscheduled')";
+            $sql = "INSERT INTO Appointments VALUES(?, ?, ?, STR_TO_DATE(?, '%d/%m/%Y %h:%i %p'), ?, 'unscheduled')";
             $stmt = $conn->prepare($sql);
-            $result = $stmt->execute([$appointment_id, $patient_id, $array_payload['doctor_id'], $array_payload['date']]);
+            $result = $stmt->execute([$appointment_id, $patient_id, $array_payload['doctor_id'], $array_payload['date'], $array_payload['description']]);
             if($result) {
                 echo json_decode($request_payload);
             } else {

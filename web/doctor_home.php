@@ -173,37 +173,6 @@
                   </div>
                 </div>
 
-              <div class="cards">
-
-                  <div class="card" id="pinfo" style=" margin-top: -10%;">
-                    <div class="card__image-holder">
-                     
-                    </div>
-                    <div class="card-title">
-                      <a href="#" class="toggle-info btn" style="margin-bottom: 5%;">
-                        <span class="left"></span>
-                        <span class="right"></span>
-                      </a>
-                      <p class="patient-name" style="color: black;"><strong>Name:</strong> Ishan Kunkolikar</p>
-                      <p class="patient-sex"><strong>Gender:</strong> Male</p>
-                      <p class="patient-age"><strong>Age:</strong> 26</p>
-                      <p class="patient-last-visit"><strong>Phone:</strong> 7763452316</p>
-                    </div>
-                    <div class="card-flap flap1">
-                      <div class="card-description">
-                          <h3 style="color: #003d4d;"><strong>Last visited: 10/02/2019</strong></h3>
-                          <p class="patient-sex" style=" color:black ;"><strong>Diagnosis:</strong> Common Cold</p>
-                          <p class="patient-age" style=" color:black ;"><strong>Prescribed:</strong> Viscodyne</p>
-                      </div>
-                      <div class="card-flap flap2">
-                        <div class="card-actions">
-                          <a href="patient_report.php?patient_id=P450213" class="btn" style="margin-left: 50%;">View Profile</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
                 <div class="cards" id="scroll">
 
                   <div class="card" id="pinfo" style=" margin-top: -10%;">
@@ -265,6 +234,39 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="cards">
+
+                  <div class="card" id="pinfo" style=" margin-top: -10%;">
+                    <div class="card__image-holder">
+                     
+                    </div>
+                    <div class="card-title">
+                      <a href="#" class="toggle-info btn" style="margin-bottom: 5%;">
+                        <span class="left"></span>
+                        <span class="right"></span>
+                      </a>
+                      <p class="patient-name" style="color: black;"><strong>Name:</strong> Tony Stark</p>
+                      <p class="patient-sex"><strong>Gender:</strong> Male</p>
+                      <p class="patient-age"><strong>Age:</strong> 50</p>
+                      <p class="patient-last-visit"><strong>Phone:</strong> --</p>
+                    </div>
+                    <div class="card-flap flap1">
+                      <div class="card-description">
+                          <h3 style="color: #003d4d;"><strong>Last visited: 28/02/2020</strong></h3>
+                          <p class="patient-sex" style=" color:black ;"><strong>Diagnosis:</strong> Throat Infection</p>
+                          <p class="patient-age" style=" color:black ;"><strong>Prescribed:</strong> Acetaminophen</p>
+                      </div>
+                      <div class="card-flap flap2">
+                        <div class="card-actions">
+                          <a href="patient_report.php?patient_id=P723565" class="btn" style="margin-left: 50%;">View Profile</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               </div>
               
             
