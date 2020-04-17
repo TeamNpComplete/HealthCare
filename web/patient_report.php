@@ -64,8 +64,12 @@
                         </section>
                     </section>
                     <section class="ps-info-block">
-                        <section class="ps-label">Age</section>
-                        <section class="ps-name">18 Years 3 Months</section>
+                        <section class="ps-label">Date of Birth</section>
+                        <section class="ps-name">
+                            <?php 
+                                echo $general_info['dob'];
+                            ?>
+                        </section>
                     </section>
                     <section class="ps-info-block">
                         <section class="ps-label">Contact</section>
